@@ -49,12 +49,12 @@ function playRound(humanChoice, computerChoice)
     if(humanChoice == "Rock" && computerChoice == "Scissors")
     {
         console.log("You won!");
-        computerScore++;
+        humanScore++;
     }
     if(humanChoice == "Rock" && computerChoice == "Paper")
     {
         console.log("The computer won!");
-        humanScore++;
+        computerScore++;
     }
     if(humanChoice == "Paper" && computerChoice == "Rock")
     {
@@ -76,6 +76,8 @@ function playRound(humanChoice, computerChoice)
         console.log("The computer won!");
         computerScore++;
     }
+
+    console.log(`Human Score: ${humanScore} | Computer Score: ${computerScore}`);
 }
 
 let humanScore = 0;
