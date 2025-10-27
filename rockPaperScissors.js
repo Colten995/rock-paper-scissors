@@ -83,9 +83,25 @@ function playRound(humanChoice, computerChoice)
 let humanScore = 0;
 let computerScore = 0;
 
-for (let i = 0; i < 5; i++)
-{
-    const humanChoice = getHumanChoice();
-    const computerChoice = getComputerChoice();
-    playRound(humanChoice, computerChoice);
-}
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+        const target = e.target;
+
+        switch(target.id) {
+            case 'rock-button':
+                playRound("Rock", getComputerChoice());
+                break;
+            case 'paper-button':
+                playRound("Paper", getComputerChoice());
+                break;
+            case 'scissors-button':
+                playRound("Scissors", getComputerChoice());
+                break;
+            default:
+                console.log("Error: button click target ID: " + target);
+        }
+    })
+})
+
