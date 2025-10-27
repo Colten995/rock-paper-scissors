@@ -89,6 +89,14 @@ function playRound(humanChoice, computerChoice)
     results.textContent += "\n";
 
     scores.textContent = `Human Score: ${humanScore} | Computer Score: ${computerScore}`;
+
+    if(humanScore >= 5) {
+        results.textContent += "Congratulations you won the game!";
+    }
+
+    if(computerScore >= 5) {
+        results.textContent += "Oh darn! The computer beat you! Try again?";
+    }
 }
 
 let humanScore = 0;
